@@ -205,7 +205,7 @@
             <div class="container">
                 <h2 class="section-title">Get In Touch</h2>
                 <div class="contact-wrapper">
-                    <form class="contact-form" action="#" method="post" aria-label="Contact form">
+                    <form class="contact-form" aria-label="Contact form">
                         <div class="form-group">
                             <label for="name">Name</label>
                             <input type="text" id="name" name="name" placeholder="Your name" required>
@@ -274,6 +274,21 @@
             </p>
         </div>
     </footer>
+    <script>
+        const contactForm = document.querySelector(".contact-form");
+
+        contactForm.addEventListener("submit", function (event) {
+            event.preventDefault();
+
+            const formData = new FormData(contactForm);
+            const name = formData.get("name").trim();
+            const email = formData.get("email").trim();
+            const message = formData.get("message").trim();
+            const body = `Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`;
+
+            window.location.href = `mailto:mrwahab3745@gmail.com?subject=Portfolio Contact Message&body=${encodeURIComponent(body)}`;
+        });
+    </script>
 </body>
 
 </html>
