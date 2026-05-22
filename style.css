@@ -178,6 +178,13 @@ ul {
     font-size: 22px;
     font-weight: bold;
     letter-spacing: 1px;
+    text-decoration: none;
+    transition: color var(--transition);
+}
+
+.logo:hover,
+.logo:focus-visible {
+    color: var(--color-accent);
 }
 
 /* links */
